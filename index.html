@@ -190,19 +190,21 @@
     var speedAgainstWind = 2;
     return left ? speedDownwind : speedAgainstWind;
   };
-
+//по поводу переменных я не совсем понял, есть у нас коэффициент, который используется внутри функции, зачем его объявлять глобальной переменной и почему он должен объявляться в виде UPPER_SNAKE_CASE, или мы потом пропорции волшебника менять будем и толще его делать, то что в задании было явно указано так-то назовите переменную, я вверх поместил
   var getWizardHeight = function () {
     var wizardHeightRate = 1.337;
     return wizardHeightRate * wizardWidth;
   };
-
+//чтобы он по горизонтали был по середине получется вот так:
   var getWizardX = function (width) {
-    return width  / 2;
+    return width /2 - wizardWidth/2;
+  };
+//Напишите функцию так, чтобы маг появлялся на высоте две трети игрового поля от земли.
+//если чтобы его центральная точка была на высоте 2/3 то так:
+  var getWizardY = function (height) {
+    return height * 1/3 - getWizardHeight()/2;
   };
 
-  var getWizardY = function (height) {
-    return height * 2 / 3;
-  };
 </script> 
 <script src="js/game.js"></script>
 
